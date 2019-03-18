@@ -5,8 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Photon</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
 	  <link href="favicon.png" rel="shortcut icon">
@@ -18,40 +17,53 @@
 
   <button class="trigger"></button>
 
-  <ul class="list-cards">
-    <li class="card">
-      <figure class="logo">
+  <main id="content" class="list-cards">
+    <section id="intro" class="card">
+      <input class="nav_btn" name="nav" class="" id="check_intro" name="deposit" type="radio" checked="checked" />
+      <label for="check_intro" class="card-number" ></label>
+      <figure class="nav_btn logo">
         <img src="images/photons_logo.png" />
       </figure>
-      <hgroup class="intro">
+      <hgroup class="card-info">
         <h1>What are Photons?</h1>
         <h2>This is the secondary area where a concise explanation should be written.</h2>
         <button class="cta">Learn more?</button>
       </hgroup>
-    </li>
-    <li class="card">
-      <hgroup class="deposit">
+    </section>
+    <section id="deposit" class="card">
+      <input class="nav_btn" name="nav" class="" id="check_deposit" name="deposit" type="radio" />
+      <label for="check_deposit" class="card-number" ></label>
+      <figure class="logo">
+        <img src="images/photons_logo.png" />
+      </figure>
+      <hgroup class="card-info">
         <h1>How to deposit Photons?</h1>
         <h2>Here are the instructions</h2>
       </hgroup>
-    </li>
-    <li class="card">
-      <hgroup class="withdraw">
+    </section>
+    <section id="withdraw" class="card">
+      <input class="nav_btn" name="nav" class="" id="check_withdraw" name="deposit" type="radio" />
+      <label for="check_withdraw" class="card-number" ></label>
+      <figure class="logo">
+        <img src="images/photons_logo.png" />
+      </figure>
+      <hgroup class="card-info">
         <h1>How to withdraw Photons?</h1>
         <h2>Here are the instructions</h2>
       </hgroup>
-    </li>
-    <li class="card">
-      <hgroup class="team">
+    </section>
+    <section id="team" class="card">
+      <input class="nav_btn" name="nav" class="" id="check_team" name="deposit" type="radio" />
+      <label for="check_team" class="card-number" ></label>
+      <figure class="logo">
+        <img src="images/photons_logo.png" />
+      </figure>
+      <hgroup class="card-info">
         <h1>About the Team</h1>
         <h2>Why are we doing this?</h2>
       </hgroup>
-    </li>
+    </section>
   </ul>
-
-  <main id="content" class="main-area">
-
-  </main>
 
 </body>
 

@@ -109,20 +109,20 @@ img {
 	height: auto;
 }
 
-.intro {
+.card-info {
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-.intro h1 {
+.card-info h1 {
   color: #222a2d;
   /*position: relative;
   left: .2em;*/
   margin: 4em 0 0;
 }
 
-.intro h2 {
+.card-info h2 {
   color: #5fb8e3;
 }
 
@@ -146,7 +146,7 @@ img {
 }
 
 /*
-INTRO
+card-info
 */
 
 .card {
@@ -172,6 +172,17 @@ INTRO
   outline: none;
 }
 
+.trigger:hover {
+	width: 20em;
+	height: 20em;
+}
+
+.trigger:focus {
+	display: none;
+	z-index: -1;
+	pointer-events: none;
+}
+
 .logo {
   width: 3em;
   height: auto;
@@ -181,31 +192,31 @@ INTRO
   transition: all .6s ease;
 }
 
-.trigger:hover ~ .list-cards .logo, .trigger:focus ~ .list-cards .logo {
+.trigger:hover ~ .list-cards .logo, .trigger:focus ~ .list-cards .logo, .list-cards.open .logo {
   transform: rotate(360deg);
 }
 
-.list-cards .card:nth-child(1) {
+.list-cards #intro {
   background: #f7f7f7;
   z-index: 4;
 }
 
-.intro .cta {
+.card-info .cta {
   margin: 8em 0 0;
 }
 
-.intro .cta:hover {
+.card-info .cta:hover {
   background: #5fb8e3;
   color: #fff;
 }
 
-.list-cards .card:nth-child(2) {
+#deposit {
   background: #c1dced;
   z-index: 3;
   transition-delay: .1s;
 }
 
-.list-cards .card:nth-child(3) {
+.list-cards #withdraw {
   background: #92c9e8;
   z-index: 2;
   transition-delay: .3s;
@@ -217,21 +228,86 @@ INTRO
   z-index: 1;
 }
 
-.trigger:hover ~ .list-cards .card:nth-child(1), .trigger:focus ~ .list-cards .card:nth-child(1) {
+.trigger:hover ~ .list-cards .card.selected, .trigger:focus ~ .list-cards .card.selected, .list-cards.open .card.selected {
   transform: translateX(8.8em) translateY(7.5em) rotate(-1deg);
 }
 
-.trigger:hover ~ .list-cards .card:nth-child(2), .trigger:focus ~ .list-cards .card:nth-child(2) {
+.trigger:hover ~ .list-cards #deposit, .trigger:focus ~ .list-cards #deposit, .list-cards.open #deposit {
   transform: translateX(5.8em) translateY(5em) rotate(-.7deg);
 }
 
-.trigger:hover ~ .list-cards .card:nth-child(3), .trigger:focus ~ .list-cards .card:nth-child(3) {
+.trigger:hover ~ .list-cards #withdraw, .trigger:focus ~ .list-cards #withdraw, .list-cards.open #withdraw {
   transform: translateX(2.8em) translateY(2.5em) rotate(-.4deg);
+}
+
+.list-cards.open .card {
+	cursor: pointer;
+}
+
+.card-number {
+	background: #f7f7f7;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position: center;
+	width: 4em;
+	height: 4em;
+	cursor: pointer;
+	opacity: .5;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	transition: all .3s;
+}
+
+.card-number:hover, input[type=radio]:checked + label {
+	opacity: 1;
+}
+
+input[type=radio] {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#deposit.selected, #withdraw.selected, #team.selected, #intro.selected {
+	background: #f7f7f7;
+	transform: none;
+}
+
+/*.card::before*/ {
+	width: 4em;
+	height: 4em;
+	opacity: .5;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	transition: all .3s;
+}
+
+.card:hover::before {
+	opacity: 1;
+}
+
+#deposit::before, #deposit .card-number {
+	background-image: url('../images/icon_safe.svg');
+}
+
+#withdraw::before, #withdraw .card-number {
+	background-image: url('../images/icon_withdraw.svg');
+}
+
+#team::before, #team .card-number {
+	background-image: url('../images/icon_contact.svg');
 }
 
 @media screen and (orientation:landscape) and (max-width: 799px) {
 
-  .intro h1, .intro .cta {
+  .card-info h1, .card-info .cta {
     margin: 2em 0 0;
   }
 
@@ -282,31 +358,29 @@ CSS GRID
 
     .card {
       position: relative;
+			padding: 5em;
       display: grid;
       grid-column: 1/2;
       grid-row: 1/2;
+	    display: grid;
+	    grid-template-columns: 3em auto;
+	    grid-template-rows: 3em auto;
+	    justify-content: space-between;
     }
 
-    .list-cards .card:nth-child(1) {
-      display: grid;
-      grid-template-columns: 3em auto;
-      grid-template-rows: 3em auto;
-      justify-content: space-between;
+    .trigger:hover ~ .list-cards #intro, .trigger:focus ~ .list-cards #intro, .list-cards.open #intro {
+      transform: translateX(10.5em) translateY(9em) rotate(-1deg);
     }
 
-    .trigger:hover ~ .list-cards .card:nth-child(1), .trigger:focus ~ .list-cards .card:nth-child(1) {
-      transform: translateX(8.8em) translateY(7.5em) rotate(-1deg);
+    .trigger:hover ~ .list-cards #deposit, .trigger:focus ~ .list-cards #deposit, .list-cards.open #deposit {
+      transform: translateX(7em) translateY(6em) rotate(-.7deg);
     }
 
-    .trigger:hover ~ .list-cards .card:nth-child(2), .trigger:focus ~ .list-cards .card:nth-child(2) {
-      transform: translateX(5.8em) translateY(5em) rotate(-.7deg);
+    .trigger:hover ~ .list-cards #withdraw, .trigger:focus ~ .list-cards #withdraw, .list-cards.open #withdraw {
+      transform: translateX(3.5em) translateY(3em) rotate(-.4deg);
     }
 
-    .trigger:hover ~ .list-cards .card:nth-child(3), ,.trigger:focus ~ .list-cards .card:nth-child(3) {
-      transform: translateX(2.8em) translateY(2.5em) rotate(-.4deg);
-    }
-
-    .intro {
+    .card-info {
       position: relative;
       top: -1em;
       grid-row: 2/3;
@@ -322,7 +396,7 @@ CSS GRID
       grid-column: 1/1;
     }
 
-    .intro h1 {
+    .card-info h1 {
       margin: 0;
       position: relative;
       left: .2em;
