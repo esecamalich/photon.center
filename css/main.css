@@ -228,7 +228,7 @@ card-info
   z-index: 1;
 }
 
-.trigger:hover ~ .list-cards .card.selected, .trigger:focus ~ .list-cards .card.selected, .list-cards.open .card.selected {
+.trigger:hover ~ .list-cards #intro, .trigger:focus ~ .list-cards #intro, .list-cards.open #intro, .trigger:hover ~ .list-cards .card.selected, .trigger:focus ~ .list-cards .card.selected, .list-cards.open .card.selected {
   transform: translateX(8.8em) translateY(7.5em) rotate(-1deg);
 }
 
