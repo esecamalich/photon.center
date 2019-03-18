@@ -15,7 +15,7 @@
 
   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-  <button class="trigger-"></button>
+  <button class="trigger"></button>
 
   <main id="content" class="list-cards">
     <section id="intro" class="card">
@@ -64,50 +64,6 @@
       </hgroup>
     </section>
   </ul>
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script>
-  	if (!window.jQuery) {
-  			document.write('<script src="js/jquery.js"><\/script>');
-  	}
-  </script>
-  <script>
-    $(window).on ( "load", function() {
-      $('#content').mousemove(function (e) {
-        if (e.clientY < $('#content').height() / 4  && e.clientX < $('#content').height() / 4) {
-            $('#content').addClass('open');
-        } else {
-            $('#content').removeClass('open');
-        }
-      });
-
-      $('.logo').click(function() {
-
-        $('list-cards').toggleClass('open');
-
-      });
-
-      if($('.nav_btn').is(':checked')) {
-        $('.nav_btn').parent().removeClass('selected')
-        $(this).parent().addClass('selected');
-      } else {
-        $(this).parent().removeClass('selected');
-      }
-
-      $('.nav_btn').click(function() {
-
-        if($('.nav_btn').is(':checked')) {
-          $('.nav_btn').parent().removeClass('selected')
-          $(this).parent().addClass('selected');
-        } else {
-          $(this).parent().removeClass('selected');
-        }
-
-      });
-
-    });
-  </script>
-  <!--<script type="text/javascript" src="js/main.js"></script>-->
 
 </body>
 

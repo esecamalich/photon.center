@@ -358,22 +358,21 @@ CSS GRID
 
     .card {
       position: relative;
-			padding: 5em;
       display: grid;
       grid-column: 1/2;
       grid-row: 1/2;
-	    display: grid;
-	    grid-template-columns: 3em auto;
-	    grid-template-rows: 3em auto;
-	    justify-content: space-between;
+	      display: grid;
+	      grid-template-columns: 3em auto;
+	      grid-template-rows: 3em auto;
+	      justify-content: space-between;
     }
 
     .trigger:hover ~ #intro, .trigger:focus ~ #intro, .list-cards.open #intro {
-      transform: translateX(10.5em) translateY(9em) rotate(-1deg);
+      transform: translateX(9.5em) translateY(8em) rotate(-1deg);
     }
 
     .trigger:hover ~ #deposit, .trigger:focus ~ #deposit, .list-cards.open #deposit {
-      transform: translateX(7em) translateY(6em) rotate(-.7deg);
+      transform: translateX(7em) translateY(6.5em) rotate(-.7deg);
     }
 
     .trigger:hover ~ #withdraw, .trigger:focus ~ #withdraw, .list-cards.open #withdraw {
