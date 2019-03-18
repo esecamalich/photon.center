@@ -5,8 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Photon</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
 	  <link href="favicon.png" rel="shortcut icon">
@@ -22,7 +21,7 @@
     <section id="intro" class="card">
       <input class="nav_btn" name="nav" class="" id="check_intro" name="deposit" type="radio" checked="checked" />
       <label for="check_intro" class="card-number" ></label>
-      <figure class="logo">
+      <figure class="nav_btn logo">
         <img src="images/photons_logo.png" />
       </figure>
       <hgroup class="card-info">
@@ -73,13 +72,19 @@
   	}
   </script>
   <script>
-    $(document).ready(function(){
+    $(window).on ( "load", function() {
       $('#content').mousemove(function (e) {
         if (e.clientY < $('#content').height() / 4  && e.clientX < $('#content').height() / 4) {
             $('#content').addClass('open');
         } else {
             $('#content').removeClass('open');
         }
+      });
+
+      $('.logo').click(function() {
+
+        $('list-cards').toggleClass('open');
+
       });
 
       if($('.nav_btn').is(':checked')) {
